@@ -70,10 +70,10 @@ public class Parser {
 	do {
 		token = lexer.next();	//type() does not eat token
 		var = new Variable(match(TokenType.Identifier));
-		dec = new Declaration( v , t );	//create new dec instance
+		dec = new Declaration( var , typ );	//create new dec instance
 		ds.members.add(declaration);	//good catch Jacky!
 	} while( token != Token.semicolonTok );
-	token = lexer.next();	//JQ Why does this not happen above?
+	token = lexer.next();	//above line does not eat semicolon on check
         // student exercise
     }
 
